@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazniceV2_test", "RazniceV2_test.csproj", "{63B1E9DB-3DB9-4929-A005-1BB36149BAF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63B1E9DB-3DB9-4929-A005-1BB36149BAF4}.Debug|x86.ActiveCfg = Debug|x86
+		{63B1E9DB-3DB9-4929-A005-1BB36149BAF4}.Debug|x86.Build.0 = Debug|x86
+		{63B1E9DB-3DB9-4929-A005-1BB36149BAF4}.Release|x86.ActiveCfg = Release|x86
+		{63B1E9DB-3DB9-4929-A005-1BB36149BAF4}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C8635DE-4EE8-4909-AC07-0B9BD83D62EA}
+	EndGlobalSection
+EndGlobal
