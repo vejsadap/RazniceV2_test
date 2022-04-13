@@ -1307,7 +1307,7 @@ namespace Raznice
                     continue;
                 }
 
-                if (!SetTiskV2(typeDoz: nTyp /*2*/, txt, popisek_stitku, cislo_ean, false, true))
+                if (!SetTiskV2(nTyp /*2*/, txt, popisek_stitku, cislo_ean, false, true))
                 {
                     popisStavuRaznice = new Vlastnosti.popisStavuRaznice();
                     popisStavuRaznice = DejPopisStavu();
