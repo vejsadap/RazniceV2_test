@@ -646,37 +646,37 @@ namespace Raznice
 
 #if DLL
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool Init();
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool Ping();
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool Start();
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool Reset();
 
         //////////////////////
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool ReadStatus(ref short nStatus);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool ReadInfo(ref short nInfo);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool ReadError(ref short nError);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool ReadFinishOK(ref bool lOK);
 
@@ -684,25 +684,25 @@ namespace Raznice
         //static extern bool SendType(int nType);
         //static extern bool SendType(char nType);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool SendType([MarshalAs(UnmanagedType.LPStr)] string txt);
+        static extern bool SendType([MarshalAs(UnmanagedType.LPWStr)] string txt);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool SendTextName([MarshalAs(UnmanagedType.LPStr)] string txt, int nLen);
+        static extern bool SendTextName([MarshalAs(UnmanagedType.LPWStr)] string txt, int nLen);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool SendTextPersonalNo([MarshalAs(UnmanagedType.LPStr)] string txt, int nLen);
+        static extern bool SendTextPersonalNo([MarshalAs(UnmanagedType.LPWStr)] string txt, int nLen);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool SendTextBarCode([MarshalAs(UnmanagedType.LPStr)] string txt, int nLen);
+        static extern bool SendTextBarCode([MarshalAs(UnmanagedType.LPWStr)] string txt, int nLen);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool SendTextRazNo([MarshalAs(UnmanagedType.LPStr)] string txt, int nLen);
+        static extern bool SendTextRazNo([MarshalAs(UnmanagedType.LPWStr)] string txt, int nLen);
 #else
 
         //simulace fci z Raznice.dll
