@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Data.OleDb;
 
 using System.Runtime.InteropServices;
+using System.Configuration;
 
 namespace Raznice
 {
@@ -29,6 +30,9 @@ namespace Raznice
         frmRaznice formRaz;         // nastaveny object formu ve Form_Load pro parametr zasilani LogMessage
         bool tisk_z_pole_prijmeni;  // jake pole (prijmeni nebo Tisk_2) z tabulky se pouzije pro tisk stitku
 
+        string dllPath = "";
+        string appDirectory = "";
+   
 
         private class Item
         {
@@ -644,7 +648,12 @@ namespace Raznice
 
         #region ImportDLL
 
+
 #if DLL
+//        dllPath = ConfigurationManager.AppSettings["dllPath"];
+//        string appDirectory = Path.GetDirectoryName(path: dllPath);
+//        Directory.SetCurrentDirectory(appDirectory);
+
    
         [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
