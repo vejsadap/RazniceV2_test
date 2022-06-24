@@ -194,9 +194,9 @@ namespace Raznice
         public Vlastnosti.popisStavuRaznice DejPopisStavu()
         {
             Vlastnosti.popisStavuRaznice popisStavu = new Vlastnosti.popisStavuRaznice();
-            int nStatus = -1;
-            int nInfo = -1;
-            int nError = -1;
+            Int16 nStatus = -1;
+            Int16 nInfo = -1;
+            Int16 nError = -1;
             popisStavu.stavText = "";
             try
             {
@@ -650,66 +650,73 @@ namespace Raznice
 
 
 #if DLL
+<<<<<<< HEAD
 //        dllPath = ConfigurationManager.AppSettings["dllPath"];
 //        string appDirectory = Path.GetDirectoryName(path: dllPath);
 //        Directory.SetCurrentDirectory(appDirectory);
 
    
         [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+=======
+
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
+>>>>>>> f156265218179d46b48e1d2e51c2401c6f5a2f83
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool Init();
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool Ping();
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool Start();
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
         static extern bool Reset();
 
         //////////////////////
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool ReadStatus(ref int nStatus);
+        static extern bool ReadStatus(ref short nStatus);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool ReadInfo(ref int nInfo);
+        static extern bool ReadInfo(ref short nInfo);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool ReadError(ref int nError);
+        static extern bool ReadError(ref short nError);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool ReadFinishOK(ref int lOK);
+        static extern bool ReadFinishOK(ref bool lOK);
 
         //////////////////////
+        //static extern bool SendType(int nType);
+        //static extern bool SendType(char nType);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool SendType(int nType);
+        static extern bool SendType([MarshalAs(UnmanagedType.LPWStr)] string txt);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool SendTextName([MarshalAs(UnmanagedType.LPStr)] string txt, int nLen);
+        static extern bool SendTextName([MarshalAs(UnmanagedType.LPWStr)] string txt, int nLen);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool SendTextPersonalNo([MarshalAs(UnmanagedType.LPStr)] string txt, int nLen);
+        static extern bool SendTextPersonalNo([MarshalAs(UnmanagedType.LPWStr)] string txt, int nLen);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool SendTextBarCode([MarshalAs(UnmanagedType.LPStr)] string txt, int nLen);
+        static extern bool SendTextBarCode([MarshalAs(UnmanagedType.LPWStr)] string txt, int nLen);
 
-        [DllImport("RazniceV2.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        [DllImport("RazniceV2.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I1)]
-        static extern bool SendTextRazNo([MarshalAs(UnmanagedType.LPStr)] string txt, int nLen);
+        static extern bool SendTextRazNo([MarshalAs(UnmanagedType.LPWStr)] string txt, int nLen);
 #else
 
         //simulace fci z Raznice.dll
@@ -1011,6 +1018,8 @@ namespace Raznice
             string numZdroj = "";
             string namePrint = "";
             string personalNoPrint = "";
+            bool jakSendText = false;
+            Vlastnosti.popisStavuRaznice popisStavuRaznice = null;
 
             //1A Michlova
             //050190002
@@ -1066,20 +1075,63 @@ namespace Raznice
                 Globalni.Nastroje.LogMessage("SetTiskV2 SendTextName:" + namePrint.ToString() + ", SendTextPersonalNo: " + personalNoPrint.ToString() + ", SendTextBarCode: " + numZdroj.ToString() + ", SendTextRazNo: " + txt_DozNum.ToString(), false, "Information", formRaz);
                 //jakTisk = PrintEAN13(numZdroj, numZdroj.Length, nameZdroj, nameZdroj.Length);
 
-                if (SendType(typeDoz))
-                    if (SendTextName(namePrint, namePrint.Length))
-                        if (SendTextPersonalNo(personalNoPrint, personalNoPrint.Length))
-                            if (SendTextBarCode(numZdroj, numZdroj.Length))
-                                if (SendTextRazNo(txt_DozNum, txt_DozNum.Length))
-                                    jakTisk = true;
+                //if (SendType(typeDoz))
+                //    if (SendTextName(namePrint, namePrint.Length))
+                //        if (SendTextPersonalNo(personalNoPrint, personalNoPrint.Length))
+                //            if (SendTextBarCode(numZdroj, numZdroj.Length))
+                //                if (SendTextRazNo(txt_DozNum, txt_DozNum.Length))
+                //                    jakTisk = true;
 
-                if (jakTisk == true)
+                #region metody SendText
+                jakSendText = true;
+                //char cType = char.Parse(typeDoz.ToString());
+                //if (!SendType(cType)
+                if (!SendType(typeDoz.ToString() /*cType*/))
                 {
+                    popisStavuRaznice = new Vlastnosti.popisStavuRaznice();
+                    popisStavuRaznice = DejPopisStavu();
+                    Globalni.Nastroje.LogMessage("NaRazitDozV2, SendType(): chyba, stav: " + popisStavuRaznice.stavText.ToString(), false, "Error", formRaz);
+                    jakSendText = false;
+                }
+                if (!SendTextName(namePrint, namePrint.Length))
+                {
+                    popisStavuRaznice = new Vlastnosti.popisStavuRaznice();
+                    popisStavuRaznice = DejPopisStavu();
+                    Globalni.Nastroje.LogMessage("NaRazitDozV2, SendTextName(): chyba, stav: " + popisStavuRaznice.stavText.ToString(), false, "Error", formRaz);
+                    jakSendText = false;
+                }
+                if (!SendTextPersonalNo(personalNoPrint, personalNoPrint.Length))
+                {
+                    popisStavuRaznice = new Vlastnosti.popisStavuRaznice();
+                    popisStavuRaznice = DejPopisStavu();
+                    Globalni.Nastroje.LogMessage("NaRazitDozV2, SendTextPersonalNo(): chyba, stav: " + popisStavuRaznice.stavText.ToString(), false, "Error", formRaz);
+                    jakSendText = false;
+                }
+                if (!SendTextBarCode(numZdroj, numZdroj.Length))
+                {
+                    popisStavuRaznice = new Vlastnosti.popisStavuRaznice();
+                    popisStavuRaznice = DejPopisStavu();
+                    Globalni.Nastroje.LogMessage("NaRazitDozV2, SendTextBarCode(): chyba, stav: " + popisStavuRaznice.stavText.ToString(), false, "Error", formRaz);
+                    jakSendText = false;
+                }
+                if (!SendTextRazNo(txt_DozNum, txt_DozNum.Length))
+                {
+                    popisStavuRaznice = new Vlastnosti.popisStavuRaznice();
+                    popisStavuRaznice = DejPopisStavu();
+                    Globalni.Nastroje.LogMessage("NaRazitDozV2, SendTextRazNo(): chyba, stav: " + popisStavuRaznice.stavText.ToString(), false, "Error", formRaz);
+                    jakSendText = false;
+                }
+                #endregion
+
+                if (jakSendText == true)
+                {
+                    jakTisk = true;
                     lblStatus.Text = "Tisk ok";
                     //toolStripStatusLabel.Text = "Tisk EAN13 ok";
                 }
                 else
                 {
+                    jakTisk = false;
                     lblStatus.Text = "Chyba SetTiskV2";
                     toolStripStatusLabel.Text = "Chyba SetTiskV2";
                     if (hlasitChybu)
@@ -1362,14 +1414,14 @@ namespace Raznice
             while (koleckoFinish <= 3)
             {
                 Cekej(2);
-                int lOk = 0;
+                bool lOk = false;
                 if (!ReadFinishOK(ref lOk))
                 {
                     MessageBox.Show("chyba pri ReadFinishOK()", Globalni.Parametry.aplikace.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Globalni.Nastroje.LogMessage("chyba pri ReadFinishOK()", false, "Error", formRaz);
                 }
 
-                if (lOk == 0)
+                if (lOk == false)
                 {
 
                     popisStavuRaznice = new Vlastnosti.popisStavuRaznice();
